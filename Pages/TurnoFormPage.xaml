@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="FilaVirtual.Pages.TurnoFormPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Nuevo turno">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="18">
+
+            <VerticalStackLayout Spacing="5">
+
+                <Label
+                    Text="Nuevo turno"
+                    FontSize="28"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Text="Completa los datos del turno"
+                    TextColor="{StaticResource GrayColor}" />
+
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout Spacing="7">
+
+                <Label
+                    Text="Número de turno"
+                    FontAttributes="Bold" />
+
+                <Entry
+                    Placeholder="Ej. A-025" />
+
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout Spacing="7">
+
+                <Label
+                    Text="Negocio"
+                    FontAttributes="Bold" />
+
+                <Entry
+                    Placeholder="Nombre del negocio" />
+
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout Spacing="7">
+
+                <Label
+                    Text="Servicio"
+                    FontAttributes="Bold" />
+
+                <Entry
+                    Placeholder="Servicio solicitado" />
+
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout Spacing="7">
+
+                <Label
+                    Text="Fecha"
+                    FontAttributes="Bold" />
+
+                <DatePicker />
+
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout Spacing="7">
+
+                <Label
+                    Text="Hora aproximada"
+                    FontAttributes="Bold" />
+
+                <TimePicker />
+
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout Spacing="7">
+
+                <Label
+                    Text="Personas delante"
+                    FontAttributes="Bold" />
+
+                <Entry
+                    Placeholder="Ej. 3"
+                    Keyboard="Numeric" />
+
+            </VerticalStackLayout>
+
+
+            <VerticalStackLayout Spacing="7">
+
+                <Label
+                    Text="Estado"
+                    FontAttributes="Bold" />
+
+                <Picker
+                    Title="Selecciona el estado">
+
+                    <Picker.Items>
+                        <x:String>En espera</x:String>
+                        <x:String>Próximo</x:String>
+                        <x:String>Atendiendo</x:String>
+                        <x:String>Completado</x:String>
+                    </Picker.Items>
+
+                </Picker>
+
+            </VerticalStackLayout>
+
+
+            <Button
+                Text="Guardar turno"
+                Margin="0,10,0,0" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

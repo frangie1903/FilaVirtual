@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="FilaVirtual.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Inicio">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="20">
+
+            <VerticalStackLayout Spacing="4">
+
+                <Label
+                    Text="Hola"
+                    FontSize="28"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Text="Bienvenido a FilaVirtual"
+                    FontSize="16"
+                    TextColor="{StaticResource GrayColor}" />
+
+            </VerticalStackLayout>
+
+
+            <!-- Turno actual -->
+
+            <Border
+                BackgroundColor="{StaticResource PrimaryColor}"
+                StrokeThickness="0"
+                Padding="20">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="18" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label
+                        Text="Tu turno actual"
+                        TextColor="White"
+                        FontSize="16" />
+
+                    <Label
+                        Text="A-025"
+                        TextColor="White"
+                        FontSize="42"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Text="Clínica Central"
+                        TextColor="White"
+                        FontSize="17" />
+
+                    <Label
+                        Text="3 personas delante"
+                        TextColor="White"
+                        FontSize="15" />
+
+                    <Label
+                        Text="En espera"
+                        TextColor="White"
+                        FontAttributes="Bold" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+            <!-- Acciones -->
+
+            <Label
+                Text="Acciones"
+                FontSize="20"
+                FontAttributes="Bold" />
+
+            <Button
+                Text="Escanear código QR" />
+
+            <Button
+                Text="Mis turnos"
+                BackgroundColor="{StaticResource SecondaryColor}"
+                TextColor="{StaticResource PrimaryColor}" />
+
+            <Button
+                Text="Nuevo turno"
+                BackgroundColor="White"
+                TextColor="{StaticResource PrimaryColor}"
+                BorderColor="{StaticResource PrimaryColor}"
+                BorderWidth="1" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

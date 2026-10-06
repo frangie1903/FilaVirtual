@@ -1,0 +1,190 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|c:\\proyecto\\filavirtual\\filavirtual\\pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|solutionrelative:pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|c:\\proyecto\\filavirtual\\filavirtual\\pages\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|solutionrelative:pages\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|c:\\proyecto\\filavirtual\\filavirtual\\pages\\turnoformpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|solutionrelative:pages\\turnoformpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|c:\\proyecto\\filavirtual\\filavirtual\\pages\\turnospage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|solutionrelative:pages\\turnospage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|c:\\proyecto\\filavirtual\\filavirtual\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|c:\\proyecto\\filavirtual\\filavirtual\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|c:\\proyecto\\filavirtual\\filavirtual\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|c:\\proyecto\\filavirtual\\filavirtual\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|c:\\proyecto\\filavirtual\\filavirtual\\pages\\turnoformpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|solutionrelative:pages\\turnoformpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|c:\\proyecto\\filavirtual\\filavirtual\\models\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FB85677-C83C-42A4-A139-1843CED708B9}|FilaVirtual.csproj|solutionrelative:models\\turno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\AppShell.xaml",
+              "RelativeDocumentMoniker": "AppShell.xaml",
+              "ToolTip": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\AppShell.xaml",
+              "RelativeToolTip": "AppShell.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-06T03:17:28.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\MainPage.xaml",
+              "RelativeDocumentMoniker": "MainPage.xaml",
+              "ToolTip": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\MainPage.xaml",
+              "RelativeToolTip": "MainPage.xaml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-06T03:17:24.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomePage.xaml",
+              "DocumentMoniker": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\Pages\\HomePage.xaml",
+              "RelativeDocumentMoniker": "Pages\\HomePage.xaml",
+              "ToolTip": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\Pages\\HomePage.xaml",
+              "RelativeToolTip": "Pages\\HomePage.xaml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-06T03:15:11.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\Pages\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\LoginPage.xaml",
+              "ToolTip": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\Pages\\LoginPage.xaml",
+              "RelativeToolTip": "Pages\\LoginPage.xaml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAqwBQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-06T03:17:53.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-06T03:17:33.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TurnosPage.xaml",
+              "DocumentMoniker": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\Pages\\TurnosPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\TurnosPage.xaml",
+              "ToolTip": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\Pages\\TurnosPage.xaml",
+              "RelativeToolTip": "Pages\\TurnosPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-06T03:16:03.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T03:17:08.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TurnoFormPage.xaml",
+              "DocumentMoniker": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\Pages\\TurnoFormPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\TurnoFormPage.xaml",
+              "ToolTip": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\Pages\\TurnoFormPage.xaml",
+              "RelativeToolTip": "Pages\\TurnoFormPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-10-06T03:08:52.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TurnoFormPage.xaml.cs",
+              "DocumentMoniker": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\Pages\\TurnoFormPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\TurnoFormPage.xaml.cs",
+              "ToolTip": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\Pages\\TurnoFormPage.xaml.cs",
+              "RelativeToolTip": "Pages\\TurnoFormPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T03:16:28.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Turno.cs",
+              "DocumentMoniker": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\Models\\Turno.cs",
+              "RelativeDocumentMoniker": "Models\\Turno.cs",
+              "ToolTip": "C:\\Proyecto\\FilaVirtual\\FilaVirtual\\Models\\Turno.cs",
+              "RelativeToolTip": "Models\\Turno.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-06T03:05:51.835Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

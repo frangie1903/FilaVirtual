@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="FilaVirtual.Pages.TurnosPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Mis turnos">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <VerticalStackLayout
+            Padding="20,20,20,10"
+            Spacing="5">
+
+            <Label
+                Text="Mis turnos"
+                FontSize="28"
+                FontAttributes="Bold" />
+
+            <Label
+                Text="Consulta tus turnos recientes"
+                TextColor="{StaticResource GrayColor}" />
+
+        </VerticalStackLayout>
+
+
+        <ScrollView
+            Grid.Row="1">
+
+            <VerticalStackLayout
+                Padding="20,10,20,20"
+                Spacing="15">
+
+
+                <!-- Turno 1 -->
+
+                <Border
+                    BackgroundColor="White"
+                    Stroke="#E2E8F0"
+                    StrokeThickness="1"
+                    Padding="18">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15" />
+                    </Border.StrokeShape>
+
+                    <Grid
+                        ColumnDefinitions="*,Auto"
+                        RowDefinitions="Auto,Auto,Auto"
+                        RowSpacing="8">
+
+                        <Label
+                            Text="A-025"
+                            FontSize="25"
+                            FontAttributes="Bold" />
+
+                        <Label
+                            Grid.Column="1"
+                            Text="En espera"
+                            TextColor="{StaticResource SuccessColor}"
+                            FontAttributes="Bold" />
+
+                        <Label
+                            Grid.Row="1"
+                            Text="Clínica Central"
+                            FontSize="16" />
+
+                        <Label
+                            Grid.Row="2"
+                            Text="Consulta general • 10:30 AM"
+                            TextColor="{StaticResource GrayColor}" />
+
+                    </Grid>
+
+                </Border>
+
+
+                <!-- Turno 2 -->
+
+                <Border
+                    BackgroundColor="White"
+                    Stroke="#E2E8F0"
+                    StrokeThickness="1"
+                    Padding="18">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15" />
+                    </Border.StrokeShape>
+
+                    <Grid
+                        ColumnDefinitions="*,Auto"
+                        RowDefinitions="Auto,Auto,Auto"
+                        RowSpacing="8">
+
+                        <Label
+                            Text="B-018"
+                            FontSize="25"
+                            FontAttributes="Bold" />
+
+                        <Label
+                            Grid.Column="1"
+                            Text="Completado"
+                            TextColor="{StaticResource GrayColor}"
+                            FontAttributes="Bold" />
+
+                        <Label
+                            Grid.Row="1"
+                            Text="Banco Popular"
+                            FontSize="16" />
+
+                        <Label
+                            Grid.Row="2"
+                            Text="Servicio al cliente • 2:00 PM"
+                            TextColor="{StaticResource GrayColor}" />
+
+                    </Grid>
+
+                </Border>
+
+
+                <Button
+                    Text="+ Nuevo turno"
+                    Margin="0,10,0,0" />
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

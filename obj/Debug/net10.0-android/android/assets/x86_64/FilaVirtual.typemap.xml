@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="FilaVirtual" mvid="fd81edd4cabe4e44accb1ec028ac8aa5">
+  <java-to-managed>
+    <entry java-name="crc646c5874c74fa82334/MainActivity" managed-name="FilaVirtual.MainActivity, FilaVirtual" managed-type-token-id="33554442" />
+    <entry java-name="crc646c5874c74fa82334/MainApplication" managed-name="FilaVirtual.MainApplication, FilaVirtual" managed-type-token-id="33554443" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc646c5874c74fa82334/MainActivity" managed-name="FilaVirtual.MainActivity, FilaVirtual" managed-type-token-id="33554442" />
+    <entry java-name="crc646c5874c74fa82334/MainApplication" managed-name="FilaVirtual.MainApplication, FilaVirtual" managed-type-token-id="33554443" />
+  </managed-to-java>
+</api>
