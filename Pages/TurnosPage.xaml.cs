@@ -10,4 +10,9 @@ public partial class TurnosPage : ContentPage
     {
         InitializeComponent();
     }
+
+    private async void OnNuevoTurnoClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("TurnoFormPage");
+    }
 }

@@ -10,4 +10,9 @@ public partial class LoginPage : ContentPage
     {
         InitializeComponent();
     }
+
+    private async void OnContinuarClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("HomePage");
+    }
 }

@@ -79,6 +79,16 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
+[C:/Proyecto/FilaVirtual/FilaVirtual/Pages/QrScannerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.Pages.QrScannerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\QrScannerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\QrScannerPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
 [C:/Proyecto/FilaVirtual/FilaVirtual/Pages/TurnoFormPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.Pages.TurnoFormPage.xaml

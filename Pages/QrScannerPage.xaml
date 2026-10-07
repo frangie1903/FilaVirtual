@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="FilaVirtual.Pages.QrScannerPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Escanear QR">
+
+    <Grid
+        Padding="20"
+        RowDefinitions="Auto,*,Auto">
+
+        <!-- Encabezado -->
+        <VerticalStackLayout
+            Spacing="5">
+
+            <Label
+                Text="Escanear código QR"
+                FontSize="28"
+                FontAttributes="Bold" />
+
+            <Label
+                Text="Apunta la cámara al código del establecimiento"
+                FontSize="15"
+                TextColor="{StaticResource GrayColor}" />
+
+        </VerticalStackLayout>
+
+
+        <!-- Área del escáner -->
+        <VerticalStackLayout
+            Grid.Row="1"
+            Spacing="25"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+
+            <Border
+                WidthRequest="260"
+                HeightRequest="260"
+                BackgroundColor="White"
+                Stroke="{StaticResource PrimaryColor}"
+                StrokeThickness="3">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+
+                <Grid>
+
+                    <!-- Simulación del código QR -->
+                    <Label
+                        Text="▦"
+                        FontSize="150"
+                        TextColor="{StaticResource PrimaryColor}"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center" />
+
+                    <!-- Línea de escaneo -->
+                    <BoxView
+                        HeightRequest="3"
+                        BackgroundColor="{StaticResource PrimaryColor}"
+                        VerticalOptions="Center" />
+
+                </Grid>
+
+            </Border>
+
+            <Label
+                Text="Coloca el código QR dentro del recuadro"
+                FontSize="15"
+                TextColor="{StaticResource GrayColor}"
+                HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+
+
+        <!-- Botón -->
+        <Button
+            Grid.Row="2"
+            Text="Cancelar"
+            BackgroundColor="White"
+            TextColor="{StaticResource PrimaryColor}"
+            BorderColor="{StaticResource PrimaryColor}"
+            BorderWidth="1"
+            Clicked="OnCancelarClicked" />
+
+    </Grid>
+
+</ContentPage>
