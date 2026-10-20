@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage
     x:Class="FilaVirtual.Pages.TurnoFormPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -9,235 +8,59 @@
     Shell.NavBarIsVisible="False">
 
     <Grid RowDefinitions="Auto,*,Auto">
-
-        <!-- ====================================== -->
-        <!-- ENCABEZADO -->
-        <!-- ====================================== -->
-
-        <Grid
-            Grid.Row="0"
-            Padding="20,24,20,10"
-            ColumnDefinitions="35,*">
-
-            <!-- Flecha volver -->
-            <Label
-                Grid.Column="0"
-                Text="‹"
-                FontSize="35"
-                TextColor="#344054"
-                VerticalOptions="Center"
-                HorizontalOptions="Start"/>
-
-            <VerticalStackLayout
-                Grid.Column="1"
-                Spacing="0"
-                HorizontalOptions="Center"
-                Margin="-35,0,0,0">
-
-                <Label
-                    Text="Nuevo turno"
-                    FontSize="20"
-                    FontAttributes="Bold"
-                    TextColor="#101828"
-                    HorizontalTextAlignment="Center"/>
-
-                <Label
-                    Text="Completa los datos del turno"
-                    FontSize="11"
-                    TextColor="#667085"
-                    HorizontalTextAlignment="Center"/>
-
+        <Grid Grid.Row="0" Padding="20,20,20,10" ColumnDefinitions="35,*">
+            <Button Text="‹" FontSize="30" TextColor="#344054" BackgroundColor="Transparent"
+                    Padding="0" HeightRequest="42" Clicked="OnCancelarClicked"/>
+            <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Margin="-35,0,0,0" Spacing="2">
+                <Label Text="Nuevo turno" FontSize="21" FontAttributes="Bold"
+                       TextColor="#101828" HorizontalTextAlignment="Center"/>
+                <Label Text="Completa los datos del turno" FontSize="12"
+                       TextColor="#667085" HorizontalTextAlignment="Center"/>
             </VerticalStackLayout>
-
         </Grid>
-
-
-        <!-- ====================================== -->
-        <!-- FORMULARIO -->
-        <!-- ====================================== -->
 
         <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20,6,20,18" Spacing="12">
+                <Label Text="Número de turno" FontSize="12" FontAttributes="Bold" TextColor="#1D2939"/>
+                <Entry x:Name="NumeroEntry" Placeholder="Ej. A-025" BackgroundColor="White"
+                       TextColor="#101828" PlaceholderColor="#98A2B3" HeightRequest="44"/>
 
-            <VerticalStackLayout
-                Padding="20,4,20,15"
-                Spacing="10">
+                <Label Text="Negocio" FontSize="12" FontAttributes="Bold" TextColor="#1D2939"/>
+                <Entry x:Name="NegocioEntry" Placeholder="Nombre del negocio" BackgroundColor="White"
+                       TextColor="#101828" PlaceholderColor="#98A2B3" HeightRequest="44"/>
 
+                <Label Text="Servicio" FontSize="12" FontAttributes="Bold" TextColor="#1D2939"/>
+                <Entry x:Name="ServicioEntry" Placeholder="Servicio solicitado" BackgroundColor="White"
+                       TextColor="#101828" PlaceholderColor="#98A2B3" HeightRequest="44"/>
 
-                <!-- NÚMERO DE TURNO -->
-                <VerticalStackLayout Spacing="4">
+                <Label Text="Fecha" FontSize="12" FontAttributes="Bold" TextColor="#1D2939"/>
+                <DatePicker x:Name="FechaPicker" BackgroundColor="White" TextColor="#101828"
+                            Format="dd/MM/yyyy" HeightRequest="44"/>
 
-                    <Label
-                        Text="Número de turno"
-                        FontSize="12"
-                        FontAttributes="Bold"
-                        TextColor="#1D2939"/>
+                <Label Text="Hora aproximada" FontSize="12" FontAttributes="Bold" TextColor="#1D2939"/>
+                <TimePicker x:Name="HoraPicker" BackgroundColor="White" TextColor="#101828"
+                            Format="hh:mm tt" HeightRequest="44"/>
 
-                    <Border
-                        BackgroundColor="Transparent"
-                        Stroke="#D9E1EC"
-                        StrokeThickness="1"
-                        HeightRequest="42"
-                        Padding="10,0">
+                <Label Text="Personas delante" FontSize="12" FontAttributes="Bold" TextColor="#1D2939"/>
+                <Entry x:Name="PersonasEntry" Placeholder="Ej. 3" Keyboard="Numeric"
+                       BackgroundColor="White" TextColor="#101828" PlaceholderColor="#98A2B3"
+                       HeightRequest="44"/>
 
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="8"/>
-                        </Border.StrokeShape>
-
-                        <Grid ColumnDefinitions="25,*">
-
-                            <Label
-                                Grid.Column="0"
-                                Text="♙"
-                                FontSize="15"
-                                TextColor="#667085"
-                                VerticalOptions="Center"/>
-
-                            <Entry
-                                Grid.Column="1"
-                                Placeholder="Ej. A-025"
-                                PlaceholderColor="#98A2B3"
-                                TextColor="#101828"
-                                FontSize="12"
-                                BackgroundColor="Transparent"
-                                VerticalOptions="Center"/>
-
-                        </Grid>
-                    </Border>
-
-                </VerticalStackLayout>
-
-
-                <!-- NEGOCIO -->
-                <VerticalStackLayout Spacing="4">
-
-                    <Label
-                        Text="Negocio"
-                        FontSize="12"
-                        FontAttributes="Bold"
-                        TextColor="#1D2939"/>
-
-                    <Border
-                        BackgroundColor="Transparent"
-                        Stroke="#D9E1EC"
-                        StrokeThickness="1"
-                        HeightRequest="42"
-                        Padding="10,0">
-
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="8"/>
-                        </Border.StrokeShape>
-
-                        <Grid ColumnDefinitions="25,*">
-
-                            <Label
-                                Grid.Column="0"
-                                Text="⌂"
-                                FontSize="15"
-                                TextColor="#667085"
-                                VerticalOptions="Center"/>
-
-                            <Entry
-                                Grid.Column="1"
-                                Placeholder="Nombre del negocio"
-                                PlaceholderColor="#98A2B3"
-                                TextColor="#101828"
-                                FontSize="12"
-                                BackgroundColor="Transparent"/>
-
-                        </Grid>
-
-                    </Border>
-
-                </VerticalStackLayout>
-
-
-                <!-- SERVICIO -->
-                <VerticalStackLayout Spacing="4">
-
-                    <Label
-                        Text="Servicio"
-                        FontSize="12"
-                        FontAttributes="Bold"
-                        TextColor="#1D2939"/>
-
-                    <Border
-                        BackgroundColor="Transparent"
-                        Stroke="#D9E1EC"
-                        StrokeThickness="1"
-                        HeightRequest="42"
-                        Padding="10,0">
-
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="8"/>
-                        </Border.StrokeShape>
-
-                        <Grid ColumnDefinitions="25,*">
-
-                            <Label
-                                Grid.Column="0"
-                                Text="▤"
-                                FontSize="14"
-                                TextColor="#667085"
-                                VerticalOptions="Center"/>
-
-                            <Entry
-                                Grid.Column="1"
-                                Placeholder="Servicio solicitado"
-                                PlaceholderColor="#98A2B3"
-                                TextColor="#101828"
-                                FontSize="12"
-                                BackgroundColor="Transparent"/>
-
-                        </Grid>
-
-                    </Border>
-
-                </VerticalStackLayout>
-
-
-                <!-- FECHA -->
-                <VerticalStackLayout Spacing="4">
-
-                    <Label
-                        Text="Fecha"
-                        FontSize="12"
-                        FontAttributes="Bold"
-                        TextColor="#1D2939"/>
-
-                    <Border
-                        BackgroundColor="Transparent"
-                        Stroke="#D9E1EC"
-                        StrokeThickness="1"
-                        HeightRequest="42"
-                        Padding="10,0">
-                    </Border>
-
-                </VerticalStackLayout>
-
+                <Label Text="Estado" FontSize="12" FontAttributes="Bold" TextColor="#1D2939"/>
+                <Picker x:Name="EstadoPicker" Title="Selecciona el estado" BackgroundColor="White"
+                        TextColor="#101828" HeightRequest="44">
+                    <Picker.Items>
+                        <x:String>En espera</x:String>
+                        <x:String>Atendiendo</x:String>
+                        <x:String>Completado</x:String>
+                        <x:String>Cancelado</x:String>
+                    </Picker.Items>
+                </Picker>
             </VerticalStackLayout>
-
         </ScrollView>
 
-
-        <!-- BOTÓN GUARDAR -->
-
-        <Grid
-            Grid.Row="2"
-            Padding="20,8,20,20"
-            BackgroundColor="#F7F9FD">
-
-            <Button
-                Text="▣  Guardar turno"
-                HeightRequest="50"
-                CornerRadius="10"
-                BackgroundColor="#087BF5"
-                TextColor="White"
-                FontSize="14"
-                FontAttributes="Bold"/>
-
-        </Grid>
-
+        <Button Grid.Row="2" Text="▣  Guardar turno" Margin="20,8,20,18"
+                HeightRequest="50" CornerRadius="12" BackgroundColor="#087BF5"
+                TextColor="White" FontAttributes="Bold" Clicked="OnGuardarClicked"/>
     </Grid>
-
 </ContentPage>
- 

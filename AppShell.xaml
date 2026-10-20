@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="FilaVirtual.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -5,12 +6,54 @@
     xmlns:pages="clr-namespace:FilaVirtual.Pages"
     FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Route="LoginPage"
-        ContentTemplate="{DataTemplate pages:LoginPage}" />
+    <!-- Login is the only destination before authentication. -->
+    <FlyoutItem
+        x:Name="LoginMenu"
+        Title="Acceso"
+        Route="LoginRoot"
+        IsVisible="True">
+        <ShellContent
+            Route="LoginPage"
+            ContentTemplate="{DataTemplate pages:LoginPage}" />
+    </FlyoutItem>
 
-    <ShellContent
-        Route="HomePage"
-        ContentTemplate="{DataTemplate pages:HomePage}" />
+    <!-- The application menu is hidden until credentials are accepted. -->
+    <FlyoutItem
+        x:Name="AppMenu"
+        Title="FilaVirtual"
+        Route="AppMenu"
+        IsVisible="False">
+
+        <ShellContent
+            Title="Inicio"
+            Route="HomePage"
+            ContentTemplate="{DataTemplate pages:HomePage}" />
+
+        <ShellContent
+            Title="Mis turnos"
+            Route="TurnosPage"
+            ContentTemplate="{DataTemplate pages:TurnosPage}" />
+
+        <ShellContent
+            Title="Negocios"
+            Route="NegociosPage"
+            ContentTemplate="{DataTemplate pages:NegociosPage}" />
+
+        <ShellContent
+            Title="Servicios"
+            Route="ServiciosPage"
+            ContentTemplate="{DataTemplate pages:ServiciosPage}" />
+
+        <ShellContent
+            Title="Clientes"
+            Route="ClientesPage"
+            ContentTemplate="{DataTemplate pages:ClientesPage}" />
+    </FlyoutItem>
+
+    <MenuItem
+        x:Name="LogoutMenuItem"
+        Text="Cerrar sesión"
+        IsEnabled="False"
+        Clicked="OnCerrarSesionClicked" />
 
 </Shell>
