@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FilaVirtual")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+5a2fa857771dc7046d3bc668b19987759c15c0e5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+1e286c8652f532952c288019cce903e7882c546a")]
 [assembly: System.Reflection.AssemblyProductAttribute("FilaVirtual")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FilaVirtual")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
