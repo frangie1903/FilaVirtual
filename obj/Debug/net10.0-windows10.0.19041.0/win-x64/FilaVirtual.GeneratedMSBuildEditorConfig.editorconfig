@@ -3,6 +3,15 @@ build_property.MauiXamlNoWarn =
 build_property.EnableMauiXamlDiagnostics = true
 build_property.MauiXamlLineInfo = 
 build_property.Configuration = Debug
+build_property.MauiXamlHotReload = 
+build_property.EnablePreviewFeatures = 
+build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
+build_property._MvvmToolkitIsUsingWindowsRuntimePack = true
+build_property.CsWinRTComponent = 
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotWarningLevel = 
+build_property.CsWinRTAotWarningLevel = 
 build_property.TargetFramework = net10.0-windows10.0.19041.0
 build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v10.0
@@ -15,21 +24,19 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property.EntryPointFilePath = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FilaVirtual
-build_property.ProjectDir = C:\Proyecto\FilaVirtual\FilaVirtual\
+build_property.ProjectDir = D:\FilaVirtual\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.CsWinRTAotOptimizerEnabled = true
 build_property.CsWinRTAotExportsEnabled = 
 build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptIn = 
 build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptOut = 
 build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
 build_property.CsWinRTMergeReferencedActivationFactories = 
-build_property.CsWinRTAotWarningLevel = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Proyecto/FilaVirtual/FilaVirtual/App.xaml]
+[D:/FilaVirtual/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
@@ -39,7 +46,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Proyecto/FilaVirtual/FilaVirtual/AppShell.xaml]
+[D:/FilaVirtual/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
@@ -49,7 +56,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Proyecto/FilaVirtual/FilaVirtual/MainPage.xaml]
+[D:/FilaVirtual/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
@@ -59,7 +66,17 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Proyecto/FilaVirtual/FilaVirtual/Pages/HomePage.xaml]
+[D:/FilaVirtual/Pages/ColaNegocioPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.Pages.ColaNegocioPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ColaNegocioPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ColaNegocioPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[D:/FilaVirtual/Pages/HomePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.Pages.HomePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\HomePage.xaml
@@ -69,7 +86,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Proyecto/FilaVirtual/FilaVirtual/Pages/LoginPage.xaml]
+[D:/FilaVirtual/Pages/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.Pages.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\LoginPage.xaml
@@ -79,7 +96,17 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Proyecto/FilaVirtual/FilaVirtual/Pages/QrScannerPage.xaml]
+[D:/FilaVirtual/Pages/NuevoTicketPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.Pages.NuevoTicketPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\NuevoTicketPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\NuevoTicketPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[D:/FilaVirtual/Pages/QrScannerPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.Pages.QrScannerPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\QrScannerPage.xaml
@@ -89,7 +116,17 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Proyecto/FilaVirtual/FilaVirtual/Pages/TurnoFormPage.xaml]
+[D:/FilaVirtual/Pages/RegistroNegocioPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.Pages.RegistroNegocioPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\RegistroNegocioPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\RegistroNegocioPage.xaml
+build_metadata.AdditionalFiles.Inflator = SourceGen
+build_metadata.AdditionalFiles.NoWarn = 
+build_metadata.AdditionalFiles.EnableDiagnostics = 
+build_metadata.AdditionalFiles.LineInfo = 
+
+[D:/FilaVirtual/Pages/TurnoFormPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.Pages.TurnoFormPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\TurnoFormPage.xaml
@@ -99,7 +136,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Proyecto/FilaVirtual/FilaVirtual/Pages/TurnosPage.xaml]
+[D:/FilaVirtual/Pages/TurnosPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.Pages.TurnosPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\TurnosPage.xaml
@@ -109,7 +146,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Proyecto/FilaVirtual/FilaVirtual/Resources/Styles/Colors.xaml]
+[D:/FilaVirtual/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
@@ -119,7 +156,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[C:/Proyecto/FilaVirtual/FilaVirtual/Resources/Styles/Styles.xaml]
+[D:/FilaVirtual/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = FilaVirtual.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml

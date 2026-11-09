@@ -1,11 +1,18 @@
+<<<<<<< Updated upstream
 using FilaVirtual.Models;
 using FilaVirtual.Services;
 using Microsoft.Extensions.DependencyInjection;
+=======
+using FilaVirtual.ViewModels;
+>>>>>>> Stashed changes
 
 namespace FilaVirtual.Pages;
 
-public partial class TurnoFormPage : ContentPage
+public partial class TurnoFormPage :
+    ContentPage,
+    IQueryAttributable
 {
+<<<<<<< Updated upstream
     private readonly MemoryDataService _data;
 
     public TurnoFormPage()
@@ -15,6 +22,37 @@ public partial class TurnoFormPage : ContentPage
         FechaPicker.Date = DateTime.Today;
         HoraPicker.Time = DateTime.Now.TimeOfDay;
         EstadoPicker.SelectedIndex = 0;
+=======
+    private readonly TurnoViewModel _viewModel;
+
+    public TurnoFormPage(TurnoViewModel viewModel)
+    {
+        InitializeComponent();
+
+        _viewModel = viewModel;
+        BindingContext = viewModel;
+    }
+
+    public async void ApplyQueryAttributes(
+        IDictionary<string, object> query)
+    {
+        _viewModel.LimpiarFormularioCommand.Execute(null);
+
+        if (query.TryGetValue("id", out object? valor) &&
+            int.TryParse(valor?.ToString(), out int id))
+        {
+            await _viewModel.CargarTurnoAsync(id);
+        }
+    }
+
+    private async void OnCancelarClicked(
+        object? sender,
+        EventArgs e)
+    {
+        _viewModel.LimpiarFormularioCommand.Execute(null);
+
+        await Shell.Current.GoToAsync("..");
+>>>>>>> Stashed changes
     }
 
     private async void OnCancelarClicked(object sender, EventArgs e)

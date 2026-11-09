@@ -17,11 +17,19 @@
             ContentTemplate="{DataTemplate pages:LoginPage}" />
     </FlyoutItem>
 
+<<<<<<< Updated upstream
     <!-- The application menu is hidden until credentials are accepted. -->
     <FlyoutItem
         x:Name="AppMenu"
         Title="FilaVirtual"
         Route="AppMenu"
+=======
+    <!-- CLIENTE: se muestra solo si el usuario logueado es Cliente. -->
+    <FlyoutItem
+        x:Name="ClienteMenu"
+        Title="FilaVirtual"
+        Route="ClienteMenu"
+>>>>>>> Stashed changes
         IsVisible="False">
 
         <ShellContent
@@ -30,9 +38,28 @@
             ContentTemplate="{DataTemplate pages:HomePage}" />
 
         <ShellContent
+<<<<<<< Updated upstream
             Title="Mis turnos"
             Route="TurnosPage"
             ContentTemplate="{DataTemplate pages:TurnosPage}" />
+=======
+            Title="Nuevo ticket"
+            Route="NuevoTicketPage"
+            ContentTemplate="{DataTemplate pages:NuevoTicketPage}" />
+
+        <ShellContent
+            Title="Mis tickets"
+            Route="TurnosPage"
+            ContentTemplate="{DataTemplate pages:TurnosPage}" />
+    </FlyoutItem>
+
+    <!-- ADMIN: se muestra solo si el usuario logueado es Admin. -->
+    <FlyoutItem
+        x:Name="AdminMenu"
+        Title="Administración"
+        Route="AdminMenu"
+        IsVisible="False">
+>>>>>>> Stashed changes
 
         <ShellContent
             Title="Negocios"
@@ -48,6 +75,28 @@
             Title="Clientes"
             Route="ClientesPage"
             ContentTemplate="{DataTemplate pages:ClientesPage}" />
+<<<<<<< Updated upstream
+=======
+
+        <!-- Misma página que "Mis tickets", con otra ruta para que sea única. -->
+        <ShellContent
+            Title="Tickets"
+            Route="TicketsAdminPage"
+            ContentTemplate="{DataTemplate pages:TurnosPage}" />
+    </FlyoutItem>
+
+    <!-- NEGOCIO (operador): atiende y finaliza turnos. -->
+    <FlyoutItem
+        x:Name="NegocioMenu"
+        Title="Mi negocio"
+        Route="NegocioMenu"
+        IsVisible="False">
+
+        <ShellContent
+            Title="Cola de turnos"
+            Route="ColaPage"
+            ContentTemplate="{DataTemplate pages:ColaNegocioPage}" />
+>>>>>>> Stashed changes
     </FlyoutItem>
 
     <MenuItem

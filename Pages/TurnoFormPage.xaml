@@ -8,6 +8,7 @@
     Shell.NavBarIsVisible="False">
 
     <Grid RowDefinitions="Auto,*,Auto">
+<<<<<<< Updated upstream
         <Grid Grid.Row="0" Padding="20,20,20,10" ColumnDefinitions="35,*">
             <Button Text="‹" FontSize="30" TextColor="#344054" BackgroundColor="Transparent"
                     Padding="0" HeightRequest="42" Clicked="OnCancelarClicked"/>
@@ -19,12 +20,53 @@
             </VerticalStackLayout>
         </Grid>
 
+=======
+
+        <!-- ENCABEZADO -->
+        <Grid Grid.Row="0"
+              Padding="20,20,20,10"
+              ColumnDefinitions="35,*">
+
+            <Button
+                Text="‹"
+                FontSize="30"
+                TextColor="#344054"
+                BackgroundColor="Transparent"
+                Padding="0"
+                HeightRequest="42"
+                Clicked="OnCancelarClicked" />
+
+            <VerticalStackLayout
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                Margin="-35,0,0,0"
+                Spacing="2">
+
+                <Label
+                    Text="Nuevo turno"
+                    FontSize="21"
+                    FontAttributes="Bold"
+                    TextColor="#101828"
+                    HorizontalTextAlignment="Center" />
+
+                <Label
+                    Text="Completa los datos del turno"
+                    FontSize="12"
+                    TextColor="#667085"
+                    HorizontalTextAlignment="Center" />
+
+            </VerticalStackLayout>
+        </Grid>
+
+        <!-- FORMULARIO -->
+>>>>>>> Stashed changes
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Padding="20,6,20,18" Spacing="12">
                 <Label Text="Número de turno" FontSize="12" FontAttributes="Bold" TextColor="#1D2939"/>
                 <Entry x:Name="NumeroEntry" Placeholder="Ej. A-025" BackgroundColor="White"
                        TextColor="#101828" PlaceholderColor="#98A2B3" HeightRequest="44"/>
 
+<<<<<<< Updated upstream
                 <Label Text="Negocio" FontSize="12" FontAttributes="Bold" TextColor="#1D2939"/>
                 <Entry x:Name="NegocioEntry" Placeholder="Nombre del negocio" BackgroundColor="White"
                        TextColor="#101828" PlaceholderColor="#98A2B3" HeightRequest="44"/>
@@ -45,6 +87,141 @@
                 <Entry x:Name="PersonasEntry" Placeholder="Ej. 3" Keyboard="Numeric"
                        BackgroundColor="White" TextColor="#101828" PlaceholderColor="#98A2B3"
                        HeightRequest="44"/>
+=======
+            <VerticalStackLayout
+                Padding="20,6,20,18"
+                Spacing="12">
+
+                <!-- NÚMERO -->
+                <Label Text="Número de turno"
+                       FontSize="12"
+                       FontAttributes="Bold"
+                       TextColor="#1D2939" />
+
+                <Entry
+                    Placeholder="Ej. A-025"
+                    Text="{Binding Numero}"
+                    BackgroundColor="White"
+                    TextColor="#101828"
+                    PlaceholderColor="#98A2B3"
+                    HeightRequest="44" />
+
+                <Label
+                    Text="{Binding NumeroError}"
+                    TextColor="Red"
+                    FontSize="11" />
+
+                <!-- NEGOCIO -->
+                <Label Text="Negocio"
+                       FontSize="12"
+                       FontAttributes="Bold"
+                       TextColor="#1D2939" />
+
+                <Entry
+                    Placeholder="Nombre del negocio"
+                    Text="{Binding Negocio}"
+                    BackgroundColor="White"
+                    TextColor="#101828"
+                    PlaceholderColor="#98A2B3"
+                    HeightRequest="44" />
+
+                <Label
+                    Text="{Binding NegocioError}"
+                    TextColor="Red"
+                    FontSize="11" />
+
+                <!-- SERVICIO -->
+                <Label Text="Servicio"
+                       FontSize="12"
+                       FontAttributes="Bold"
+                       TextColor="#1D2939" />
+
+                <Entry
+                    Placeholder="Servicio solicitado"
+                    Text="{Binding Servicio}"
+                    BackgroundColor="White"
+                    TextColor="#101828"
+                    PlaceholderColor="#98A2B3"
+                    HeightRequest="44" />
+
+                <Label
+                    Text="{Binding ServicioError}"
+                    TextColor="Red"
+                    FontSize="11" />
+
+                <!-- FECHA -->
+                <Label Text="Fecha"
+                       FontSize="12"
+                       FontAttributes="Bold"
+                       TextColor="#1D2939" />
+
+                <DatePicker
+                    Date="{Binding Fecha}"
+                    BackgroundColor="White"
+                    TextColor="#101828"
+                    Format="dd/MM/yyyy"
+                    HeightRequest="44" />
+
+                <!-- HORA -->
+                <Label Text="Hora aproximada"
+                       FontSize="12"
+                       FontAttributes="Bold"
+                       TextColor="#1D2939" />
+
+                <TimePicker
+                    Time="{Binding Hora}"
+                    BackgroundColor="White"
+                    TextColor="#101828"
+                    Format="hh:mm tt"
+                    HeightRequest="44" />
+
+                <!-- PERSONAS DELANTE -->
+                <Label Text="Personas delante"
+                       FontSize="12"
+                       FontAttributes="Bold"
+                       TextColor="#1D2939" />
+
+                <Entry
+                    Placeholder="Ej. 3"
+                    Text="{Binding PersonasDelante}"
+                    Keyboard="Numeric"
+                    BackgroundColor="White"
+                    TextColor="#101828"
+                    PlaceholderColor="#98A2B3"
+                    HeightRequest="44" />
+
+                <Label
+                    Text="{Binding PersonasDelanteError}"
+                    TextColor="Red"
+                    FontSize="11" />
+
+                <!-- ESTADO -->
+                <Label Text="Estado"
+                       FontSize="12"
+                       FontAttributes="Bold"
+                       TextColor="#1D2939" />
+
+                <Picker
+                    Title="Selecciona el estado"
+                    SelectedItem="{Binding Estado}"
+                    BackgroundColor="White"
+                    TextColor="#101828"
+                    HeightRequest="44">
+
+                    <Picker.Items>
+                        <x:String>En espera</x:String>
+                        <x:String>Atendiendo</x:String>
+                        <x:String>Completado</x:String>
+                        <x:String>Cancelado</x:String>
+                    </Picker.Items>
+
+                </Picker>
+
+                <Label
+                    Text="{Binding EstadoError}"
+                    TextColor="Red"
+                    FontSize="11" />
+>>>>>>> Stashed changes
 
                 <Label Text="Estado" FontSize="12" FontAttributes="Bold" TextColor="#1D2939"/>
                 <Picker x:Name="EstadoPicker" Title="Selecciona el estado" BackgroundColor="White"
@@ -59,8 +236,23 @@
             </VerticalStackLayout>
         </ScrollView>
 
+<<<<<<< Updated upstream
         <Button Grid.Row="2" Text="▣  Guardar turno" Margin="20,8,20,18"
                 HeightRequest="50" CornerRadius="12" BackgroundColor="#087BF5"
                 TextColor="White" FontAttributes="Bold" Clicked="OnGuardarClicked"/>
+=======
+        <!-- BOTÓN GUARDAR -->
+        <Button
+            Grid.Row="2"
+            Text="▣  Guardar turno"
+            Margin="20,8,20,18"
+            HeightRequest="50"
+            CornerRadius="12"
+            BackgroundColor="#087BF5"
+            TextColor="White"
+            FontAttributes="Bold"
+            Command="{Binding GuardarCommand}" />
+
+>>>>>>> Stashed changes
     </Grid>
 </ContentPage>

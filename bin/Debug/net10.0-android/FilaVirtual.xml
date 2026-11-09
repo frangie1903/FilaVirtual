@@ -4,11 +4,798 @@
         <name>FilaVirtual</name>
     </assembly>
     <members>
+        <member name="M:FilaVirtual.Services.AuthService.IniciarSesionAsync(System.String,System.String)">
+            <summary>
+            Devuelve el usuario y abre la sesión, o null si las credenciales no son válidas.
+            </summary>
+        </member>
+        <member name="M:FilaVirtual.Services.AuthService.RegistrarClienteAsync(System.String,System.String,System.String)">
+            <summary>
+            Registro público: SIEMPRE crea un Cliente. Un Admin solo se crea
+            desde la siembra inicial o directamente en la base de datos.
+            </summary>
+        </member>
+        <member name="M:FilaVirtual.Services.TicketService.GenerarAsync(FilaVirtual.Models.Usuario,FilaVirtual.Models.Negocio,FilaVirtual.Models.Sucursal,FilaVirtual.Models.Servicio)">
+            <summary>
+            Crea el ticket con el siguiente número de la sucursal para HOY.
+            Todo ocurre dentro de UNA transacción: leer contador -> incrementar ->
+            guardar ticket. Si algo falla, se revierte y no se "quema" ningún número.
+            </summary>
+        </member>
+        <member name="T:FilaVirtual.ViewModels.ClienteViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ClienteViewModel.Clientes">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ClienteViewModel.clientes"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ClienteViewModel.Id">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ClienteViewModel.id"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ClienteViewModel.Nombre">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ClienteViewModel.nombre"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ClienteViewModel.Correo">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ClienteViewModel.correo"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ClienteViewModel.Telefono">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ClienteViewModel.telefono"/>
+        </member>
+        <member name="M:FilaVirtual.ViewModels.ClienteViewModel.OnIdChanged(System.Int32)">
+            <summary>Executes the logic for when <see cref="P:FilaVirtual.ViewModels.ClienteViewModel.Id"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:FilaVirtual.ViewModels.ClienteViewModel.Id"/> is changed.</remarks>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.ClienteViewModel.cargarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.ClienteViewModel.CargarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ClienteViewModel.CargarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.ClienteViewModel.CargarAsync"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.ClienteViewModel.guardarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.ClienteViewModel.GuardarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ClienteViewModel.GuardarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.ClienteViewModel.GuardarAsync"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.ClienteViewModel.eliminarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.ClienteViewModel.EliminarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ClienteViewModel.EliminarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.ClienteViewModel.EliminarAsync(FilaVirtual.Models.Cliente)"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.ClienteViewModel.limpiarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.ClienteViewModel.LimpiarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ClienteViewModel.LimpiarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.ClienteViewModel.Limpiar"/>.</summary>
+        </member>
+        <member name="T:FilaVirtual.ViewModels.ColaNegocioViewModel">
+            <summary>
+            NEGOCIO (operador): ve la cola de HOY de su negocio y marca cada turno
+            como atendiendo, finalizado o cancelado.
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ColaNegocioViewModel.Titulo">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ColaNegocioViewModel.titulo"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ColaNegocioViewModel.Resumen">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ColaNegocioViewModel.resumen"/>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.ColaNegocioViewModel.cargarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.ColaNegocioViewModel.CargarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ColaNegocioViewModel.CargarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.ColaNegocioViewModel.CargarAsync"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.ColaNegocioViewModel.atenderCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.ColaNegocioViewModel.AtenderCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ColaNegocioViewModel.AtenderCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.ColaNegocioViewModel.AtenderAsync(FilaVirtual.ViewModels.TicketCola)"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.ColaNegocioViewModel.finalizarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.ColaNegocioViewModel.FinalizarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ColaNegocioViewModel.FinalizarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.ColaNegocioViewModel.FinalizarAsync(FilaVirtual.ViewModels.TicketCola)"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.ColaNegocioViewModel.cancelarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.ColaNegocioViewModel.CancelarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ColaNegocioViewModel.CancelarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.ColaNegocioViewModel.CancelarAsync(FilaVirtual.ViewModels.TicketCola)"/>.</summary>
+        </member>
+        <member name="T:FilaVirtual.ViewModels.HomeViewModel">
+            <summary>
+            Alimenta la tarjeta "Tu turno actual" de la pantalla de inicio con el
+            ticket activo REAL del cliente (el más reciente en espera o en atención).
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.HomeViewModel.Ticket">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.HomeViewModel.ticket"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.HomeViewModel.Numero">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.HomeViewModel.numero"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.HomeViewModel.Estado">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.HomeViewModel.estado"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.HomeViewModel.PersonasTexto">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.HomeViewModel.personasTexto"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.HomeViewModel.NegocioTexto">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.HomeViewModel.negocioTexto"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.HomeViewModel.HoraTexto">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.HomeViewModel.horaTexto"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.HomeViewModel.EstadoFondo">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.HomeViewModel.estadoFondo"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.HomeViewModel.EstadoColor">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.HomeViewModel.estadoColor"/>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.HomeViewModel.cargarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.HomeViewModel.CargarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.HomeViewModel.CargarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.HomeViewModel.CargarAsync"/>.</summary>
+        </member>
+        <member name="T:FilaVirtual.ViewModels.NegocioViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NegocioViewModel.Negocios">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.NegocioViewModel.negocios"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NegocioViewModel.Id">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.NegocioViewModel.id"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NegocioViewModel.Nombre">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.NegocioViewModel.nombre"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NegocioViewModel.Direccion">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.NegocioViewModel.direccion"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NegocioViewModel.Telefono">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.NegocioViewModel.telefono"/>
+        </member>
+        <member name="M:FilaVirtual.ViewModels.NegocioViewModel.OnIdChanged(System.Int32)">
+            <summary>Executes the logic for when <see cref="P:FilaVirtual.ViewModels.NegocioViewModel.Id"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:FilaVirtual.ViewModels.NegocioViewModel.Id"/> is changed.</remarks>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.NegocioViewModel.cargarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.NegocioViewModel.CargarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NegocioViewModel.CargarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.NegocioViewModel.CargarAsync"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.NegocioViewModel.guardarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.NegocioViewModel.GuardarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NegocioViewModel.GuardarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.NegocioViewModel.GuardarAsync"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.NegocioViewModel.eliminarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.NegocioViewModel.EliminarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NegocioViewModel.EliminarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.NegocioViewModel.EliminarAsync(FilaVirtual.Models.Negocio)"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.NegocioViewModel.limpiarFormularioCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.NegocioViewModel.LimpiarFormularioCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NegocioViewModel.LimpiarFormularioCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.NegocioViewModel.LimpiarFormulario"/>.</summary>
+        </member>
+        <member name="T:FilaVirtual.ViewModels.NuevoTicketViewModel">
+            <summary>
+            CLIENTE: elige negocio -> sucursal -> tipo de diligencia y genera el ticket.
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NuevoTicketViewModel.NegocioSeleccionado">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.NuevoTicketViewModel.negocioSeleccionado"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NuevoTicketViewModel.SucursalSeleccionada">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.NuevoTicketViewModel.sucursalSeleccionada"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NuevoTicketViewModel.ServicioSeleccionado">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.NuevoTicketViewModel.servicioSeleccionado"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NuevoTicketViewModel.TicketGenerado">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.NuevoTicketViewModel.ticketGenerado"/>
+        </member>
+        <member name="M:FilaVirtual.ViewModels.NuevoTicketViewModel.OnNegocioSeleccionadoChanged(FilaVirtual.Models.Negocio)">
+            <summary>Executes the logic for when <see cref="P:FilaVirtual.ViewModels.NuevoTicketViewModel.NegocioSeleccionado"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:FilaVirtual.ViewModels.NuevoTicketViewModel.NegocioSeleccionado"/> is changed.</remarks>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.NuevoTicketViewModel.cargarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.NuevoTicketViewModel.CargarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NuevoTicketViewModel.CargarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.NuevoTicketViewModel.CargarAsync"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.NuevoTicketViewModel.confirmarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.NuevoTicketViewModel.ConfirmarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NuevoTicketViewModel.ConfirmarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.NuevoTicketViewModel.ConfirmarAsync"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.NuevoTicketViewModel.verMisTicketsCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.NuevoTicketViewModel.VerMisTicketsCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.NuevoTicketViewModel.VerMisTicketsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.NuevoTicketViewModel.VerMisTicketsAsync"/>.</summary>
+        </member>
+        <member name="T:FilaVirtual.ViewModels.DiaHorarioEditable">
+            <inheritdoc/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.DiaHorarioEditable.Abierto">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.DiaHorarioEditable.abierto"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.DiaHorarioEditable.Apertura">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.DiaHorarioEditable.apertura"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.DiaHorarioEditable.Cierre">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.DiaHorarioEditable.cierre"/>
+        </member>
+        <member name="T:FilaVirtual.ViewModels.SucursalEditable">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.SucursalEditable.Nombre">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.SucursalEditable.nombre"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.SucursalEditable.Localidad">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.SucursalEditable.localidad"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.SucursalEditable.Prefijo">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.SucursalEditable.prefijo"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.SucursalEditable.OperadorCorreo">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.SucursalEditable.operadorCorreo"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.SucursalEditable.OperadorContrasena">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.SucursalEditable.operadorContrasena"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.SucursalEditable.OperadorExiste">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.SucursalEditable.operadorExiste"/>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.SucursalEditable.igualarHorasCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.SucursalEditable.IgualarHorasCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.SucursalEditable.IgualarHorasCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.SucursalEditable.IgualarHoras"/>.</summary>
+        </member>
+        <member name="T:FilaVirtual.ViewModels.ServicioSeleccionable">
+            <inheritdoc/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ServicioSeleccionable.Seleccionado">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ServicioSeleccionable.seleccionado"/>
+        </member>
+        <member name="T:FilaVirtual.ViewModels.RegistroNegocioViewModel">
+            <summary>
+            ADMIN: registra o EDITA un negocio completo (datos + sucursales con horario +
+            tipos de diligencia que ofrece) en una sola transacción.
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:FilaVirtual.ViewModels.RegistroNegocioViewModel.InicializarAsync(System.Int32)">
+            <summary>
+            negocioId = 0 -> formulario de alta. negocioId > 0 -> carga el negocio
+            con sus sucursales y los servicios que tiene marcados.
+            </summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.RegistroNegocioViewModel.Id">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.RegistroNegocioViewModel.id"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.RegistroNegocioViewModel.Nombre">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.RegistroNegocioViewModel.nombre"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.RegistroNegocioViewModel.Direccion">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.RegistroNegocioViewModel.direccion"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.RegistroNegocioViewModel.Telefono">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.RegistroNegocioViewModel.telefono"/>
+        </member>
+        <member name="M:FilaVirtual.ViewModels.RegistroNegocioViewModel.OnIdChanged(System.Int32)">
+            <summary>Executes the logic for when <see cref="P:FilaVirtual.ViewModels.RegistroNegocioViewModel.Id"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:FilaVirtual.ViewModels.RegistroNegocioViewModel.Id"/> is changed.</remarks>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.RegistroNegocioViewModel.agregarSucursalCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.RegistroNegocioViewModel.AgregarSucursalCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.RegistroNegocioViewModel.AgregarSucursalCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.RegistroNegocioViewModel.AgregarSucursal"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.RegistroNegocioViewModel.quitarSucursalCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.RegistroNegocioViewModel.QuitarSucursalCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.RegistroNegocioViewModel.QuitarSucursalCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.RegistroNegocioViewModel.QuitarSucursal(FilaVirtual.ViewModels.SucursalEditable)"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.RegistroNegocioViewModel.guardarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.RegistroNegocioViewModel.GuardarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.RegistroNegocioViewModel.GuardarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.RegistroNegocioViewModel.GuardarAsync"/>.</summary>
+        </member>
+        <member name="T:FilaVirtual.ViewModels.ServicioViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ServicioViewModel.Servicios">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ServicioViewModel.servicios"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ServicioViewModel.Id">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ServicioViewModel.id"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ServicioViewModel.Nombre">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ServicioViewModel.nombre"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ServicioViewModel.Descripcion">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ServicioViewModel.descripcion"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ServicioViewModel.DuracionMinutos">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.ServicioViewModel.duracionMinutos"/>
+        </member>
+        <member name="M:FilaVirtual.ViewModels.ServicioViewModel.OnIdChanged(System.Int32)">
+            <summary>Executes the logic for when <see cref="P:FilaVirtual.ViewModels.ServicioViewModel.Id"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:FilaVirtual.ViewModels.ServicioViewModel.Id"/> is changed.</remarks>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.ServicioViewModel.cargarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.ServicioViewModel.CargarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ServicioViewModel.CargarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.ServicioViewModel.CargarAsync"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.ServicioViewModel.guardarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.ServicioViewModel.GuardarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ServicioViewModel.GuardarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.ServicioViewModel.GuardarAsync"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.ServicioViewModel.eliminarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.ServicioViewModel.EliminarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ServicioViewModel.EliminarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.ServicioViewModel.EliminarAsync(FilaVirtual.Models.Servicio)"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.ServicioViewModel.limpiarFormularioCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.ServicioViewModel.LimpiarFormularioCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.ServicioViewModel.LimpiarFormularioCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.ServicioViewModel.LimpiarFormulario"/>.</summary>
+        </member>
+        <member name="T:FilaVirtual.ViewModels.TurnoViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.Turnos">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.TurnoViewModel.turnos"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.Id">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.TurnoViewModel.id"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.Numero">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.TurnoViewModel.numero"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.Negocio">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.TurnoViewModel.negocio"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.Servicio">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.TurnoViewModel.servicio"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.Estado">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.TurnoViewModel.estado"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.Fecha">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.TurnoViewModel.fecha"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.Hora">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.TurnoViewModel.hora"/>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.PersonasDelante">
+            <inheritdoc cref="F:FilaVirtual.ViewModels.TurnoViewModel.personasDelante"/>
+        </member>
+        <member name="M:FilaVirtual.ViewModels.TurnoViewModel.OnIdChanged(System.Int32)">
+            <summary>Executes the logic for when <see cref="P:FilaVirtual.ViewModels.TurnoViewModel.Id"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:FilaVirtual.ViewModels.TurnoViewModel.Id"/> is changed.</remarks>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.TurnoViewModel.cargarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.TurnoViewModel.CargarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.CargarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.TurnoViewModel.CargarAsync"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.TurnoViewModel.guardarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.TurnoViewModel.GuardarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.GuardarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.TurnoViewModel.GuardarAsync"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.TurnoViewModel.eliminarCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.TurnoViewModel.EliminarCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.EliminarCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.TurnoViewModel.EliminarAsync(FilaVirtual.Models.Turno)"/>.</summary>
+        </member>
+        <member name="F:FilaVirtual.ViewModels.TurnoViewModel.limpiarFormularioCommand">
+            <summary>The backing field for <see cref="P:FilaVirtual.ViewModels.TurnoViewModel.LimpiarFormularioCommand"/>.</summary>
+        </member>
+        <member name="P:FilaVirtual.ViewModels.TurnoViewModel.LimpiarFormularioCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:FilaVirtual.ViewModels.TurnoViewModel.LimpiarFormulario"/>.</summary>
+        </member>
         <member name="T:FilaVirtual.Resource">
             <summary>
             Android Resource Designer class.
             Exposes the Android Resource designer assembly into the project Namespace.
             </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Clientes">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Clientes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Id">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Id" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Nombre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Nombre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Correo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Correo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Telefono">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Telefono" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Titulo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Titulo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Resumen">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Resumen" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Ticket">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Ticket" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HayTicket">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HayTicket" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Numero">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Numero" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Estado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Estado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PersonasTexto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PersonasTexto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NegocioTexto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NegocioTexto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HoraTexto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HoraTexto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EstadoFondo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EstadoFondo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EstadoColor">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EstadoColor" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Negocios">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Negocios" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Direccion">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Direccion" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NegocioSeleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NegocioSeleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SucursalSeleccionada">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SucursalSeleccionada" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HorarioSucursal">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HorarioSucursal" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ServicioSeleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ServicioSeleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TicketGenerado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TicketGenerado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Abierto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Abierto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Apertura">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Apertura" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Cierre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Cierre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Localidad">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Localidad" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Prefijo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Prefijo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.OperadorCorreo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "OperadorCorreo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.OperadorContrasena">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "OperadorContrasena" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.OperadorExiste">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "OperadorExiste" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.OperadorAyuda">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "OperadorAyuda" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Seleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Seleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Servicios">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Servicios" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Descripcion">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Descripcion" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DuracionMinutos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DuracionMinutos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Turnos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Turnos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Negocio">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Negocio" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Servicio">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Servicio" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Fecha">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Fecha" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Hora">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Hora" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PersonasDelante">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PersonasDelante" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Clientes">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Clientes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Id">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Id" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Nombre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Nombre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Correo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Correo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Telefono">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Telefono" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Titulo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Titulo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Resumen">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Resumen" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Ticket">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Ticket" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HayTicket">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HayTicket" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Numero">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Numero" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Estado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Estado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PersonasTexto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PersonasTexto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NegocioTexto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NegocioTexto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HoraTexto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HoraTexto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EstadoFondo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EstadoFondo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EstadoColor">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EstadoColor" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Negocios">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Negocios" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Direccion">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Direccion" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NegocioSeleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NegocioSeleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SucursalSeleccionada">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SucursalSeleccionada" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HorarioSucursal">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HorarioSucursal" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ServicioSeleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ServicioSeleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TicketGenerado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TicketGenerado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Abierto">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Abierto" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Apertura">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Apertura" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Cierre">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Cierre" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Localidad">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Localidad" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Prefijo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Prefijo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.OperadorCorreo">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "OperadorCorreo" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.OperadorContrasena">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "OperadorContrasena" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.OperadorExiste">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "OperadorExiste" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.OperadorAyuda">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "OperadorAyuda" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Seleccionado">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Seleccionado" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Servicios">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Servicios" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Descripcion">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Descripcion" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DuracionMinutos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DuracionMinutos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Turnos">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Turnos" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Negocio">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Negocio" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Servicio">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Servicio" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Fecha">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Fecha" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Hora">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Hora" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PersonasDelante">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PersonasDelante" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__ObservableValidatorExtensions">
+            <summary>
+            A helper type with generated validation stubs for types deriving from <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservableValidator"/>.
+            </summary>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:CommunityToolkit.Mvvm.ComponentModel.__Internals.__ObservableValidatorExtensions.CreateAllPropertiesValidator(FilaVirtual.ViewModels.ClienteViewModel)">
+            <summary>
+            Creates a validation stub for <see cref="T:FilaVirtual.ViewModels.ClienteViewModel"/> objects.
+            </summary>
+            <param name="_">Dummy parameter, only used to disambiguate the method signature.</param>
+            <returns>A validation stub for <see cref="T:FilaVirtual.ViewModels.ClienteViewModel"/> objects.</returns>
+        </member>
+        <member name="M:CommunityToolkit.Mvvm.ComponentModel.__Internals.__ObservableValidatorExtensions.CreateAllPropertiesValidator(FilaVirtual.ViewModels.ColaNegocioViewModel)">
+            <summary>
+            Creates a validation stub for <see cref="T:FilaVirtual.ViewModels.ColaNegocioViewModel"/> objects.
+            </summary>
+            <param name="_">Dummy parameter, only used to disambiguate the method signature.</param>
+            <returns>A validation stub for <see cref="T:FilaVirtual.ViewModels.ColaNegocioViewModel"/> objects.</returns>
+        </member>
+        <member name="M:CommunityToolkit.Mvvm.ComponentModel.__Internals.__ObservableValidatorExtensions.CreateAllPropertiesValidator(FilaVirtual.ViewModels.HomeViewModel)">
+            <summary>
+            Creates a validation stub for <see cref="T:FilaVirtual.ViewModels.HomeViewModel"/> objects.
+            </summary>
+            <param name="_">Dummy parameter, only used to disambiguate the method signature.</param>
+            <returns>A validation stub for <see cref="T:FilaVirtual.ViewModels.HomeViewModel"/> objects.</returns>
+        </member>
+        <member name="M:CommunityToolkit.Mvvm.ComponentModel.__Internals.__ObservableValidatorExtensions.CreateAllPropertiesValidator(FilaVirtual.ViewModels.NegocioViewModel)">
+            <summary>
+            Creates a validation stub for <see cref="T:FilaVirtual.ViewModels.NegocioViewModel"/> objects.
+            </summary>
+            <param name="_">Dummy parameter, only used to disambiguate the method signature.</param>
+            <returns>A validation stub for <see cref="T:FilaVirtual.ViewModels.NegocioViewModel"/> objects.</returns>
+        </member>
+        <member name="M:CommunityToolkit.Mvvm.ComponentModel.__Internals.__ObservableValidatorExtensions.CreateAllPropertiesValidator(FilaVirtual.ViewModels.NuevoTicketViewModel)">
+            <summary>
+            Creates a validation stub for <see cref="T:FilaVirtual.ViewModels.NuevoTicketViewModel"/> objects.
+            </summary>
+            <param name="_">Dummy parameter, only used to disambiguate the method signature.</param>
+            <returns>A validation stub for <see cref="T:FilaVirtual.ViewModels.NuevoTicketViewModel"/> objects.</returns>
+        </member>
+        <member name="M:CommunityToolkit.Mvvm.ComponentModel.__Internals.__ObservableValidatorExtensions.CreateAllPropertiesValidator(FilaVirtual.ViewModels.RegistroNegocioViewModel)">
+            <summary>
+            Creates a validation stub for <see cref="T:FilaVirtual.ViewModels.RegistroNegocioViewModel"/> objects.
+            </summary>
+            <param name="_">Dummy parameter, only used to disambiguate the method signature.</param>
+            <returns>A validation stub for <see cref="T:FilaVirtual.ViewModels.RegistroNegocioViewModel"/> objects.</returns>
+        </member>
+        <member name="M:CommunityToolkit.Mvvm.ComponentModel.__Internals.__ObservableValidatorExtensions.CreateAllPropertiesValidator(FilaVirtual.ViewModels.ServicioViewModel)">
+            <summary>
+            Creates a validation stub for <see cref="T:FilaVirtual.ViewModels.ServicioViewModel"/> objects.
+            </summary>
+            <param name="_">Dummy parameter, only used to disambiguate the method signature.</param>
+            <returns>A validation stub for <see cref="T:FilaVirtual.ViewModels.ServicioViewModel"/> objects.</returns>
+        </member>
+        <member name="M:CommunityToolkit.Mvvm.ComponentModel.__Internals.__ObservableValidatorExtensions.CreateAllPropertiesValidator(FilaVirtual.ViewModels.TurnoViewModel)">
+            <summary>
+            Creates a validation stub for <see cref="T:FilaVirtual.ViewModels.TurnoViewModel"/> objects.
+            </summary>
+            <param name="_">Dummy parameter, only used to disambiguate the method signature.</param>
+            <returns>A validation stub for <see cref="T:FilaVirtual.ViewModels.TurnoViewModel"/> objects.</returns>
         </member>
     </members>
 </doc>

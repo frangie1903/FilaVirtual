@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FilaVirtual.Pages.ColaNegocioPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:FilaVirtual.ViewModels"
+    Title="Cola de turnos"
+    BackgroundColor="#F5F7FC">
+
+    <Grid RowDefinitions="Auto,Auto,*" Padding="16" RowSpacing="10">
+
+        <VerticalStackLayout Grid.Row="0" Spacing="2">
+            <Label Text="{Binding Titulo}" FontSize="24" FontAttributes="Bold" TextColor="#101828" />
+            <Label Text="{Binding Resumen}" FontSize="12" TextColor="#667085" />
+        </VerticalStackLayout>
+
+        <Button
+            Grid.Row="1"
+            Text="Actualizar"
+            BackgroundColor="#E0EDFF"
+            TextColor="#087BF5"
+            CornerRadius="10"
+            HeightRequest="42"
+            Command="{Binding CargarCommand}" />
+
+        <CollectionView Grid.Row="2" ItemsSource="{Binding Tickets}">
+
+            <CollectionView.EmptyView>
+                <Label
+                    Text="No hay tickets para hoy."
+                    HorizontalOptions="Center"
+                    Margin="0,40,0,0"
+                    TextColor="#667085" />
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="vm:TicketCola">
+                    <Border
+                        Margin="0,0,0,10"
+                        Padding="14"
+                        BackgroundColor="White"
+                        Stroke="#E5EAF2">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="12" />
+                        </Border.StrokeShape>
+
+                        <VerticalStackLayout Spacing="6">
+
+                            <Grid ColumnDefinitions="*,Auto">
+                                <Label
+                                    Text="{Binding Numero}"
+                                    FontSize="26"
+                                    FontAttributes="Bold"
+                                    TextColor="#101828" />
+
+                                <Border
+                                    Grid.Column="1"
+                                    BackgroundColor="{Binding EstadoFondo}"
+                                    StrokeThickness="0"
+                                    Padding="11,5"
+                                    VerticalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="12" />
+                                    </Border.StrokeShape>
+                                    <Label
+                                        Text="{Binding Estado}"
+                                        FontSize="11"
+                                        FontAttributes="Bold"
+                                        TextColor="{Binding EstadoColor}" />
+                                </Border>
+                            </Grid>
+
+                            <Label Text="{Binding Detalle}" FontSize="13" TextColor="#475467" />
+                            <Label Text="{Binding HoraTexto}" FontSize="12" TextColor="#98A2B3" />
+
+                            <!-- Atender y Finalizar nunca se ven a la vez: comparten columna. -->
+                            <Grid ColumnDefinitions="*,*" ColumnSpacing="8" Margin="0,4,0,0">
+                                <Button
+                                    Text="Atender"
+                                    IsVisible="{Binding PuedeAtender}"
+                                    BackgroundColor="#087BF5"
+                                    TextColor="White"
+                                    CornerRadius="10"
+                                    Clicked="OnAtenderClicked" />
+
+                                <Button
+                                    Text="Finalizar"
+                                    IsVisible="{Binding PuedeFinalizar}"
+                                    BackgroundColor="#16A34A"
+                                    TextColor="White"
+                                    CornerRadius="10"
+                                    Clicked="OnFinalizarClicked" />
+
+                                <Button
+                                    Grid.Column="1"
+                                    Text="Cancelar"
+                                    IsVisible="{Binding PuedeCancelar}"
+                                    BackgroundColor="#FEE4E2"
+                                    TextColor="#B42318"
+                                    CornerRadius="10"
+                                    Clicked="OnCancelarClicked" />
+                            </Grid>
+
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

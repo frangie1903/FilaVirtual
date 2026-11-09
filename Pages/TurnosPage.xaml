@@ -3,10 +3,12 @@
     x:Class="FilaVirtual.Pages.TurnosPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:FilaVirtual.Models"
     Title="Mis turnos"
     BackgroundColor="#F5F7FC">
 
     <Grid RowDefinitions="Auto,*,Auto">
+<<<<<<< Updated upstream
         <VerticalStackLayout Grid.Row="0" Padding="20,24,20,10" Spacing="3">
             <Label Text="Mis turnos" FontSize="28" FontAttributes="Bold" TextColor="#101828"/>
             <Label Text="Consulta los turnos registrados" FontSize="13" TextColor="#667085"/>
@@ -56,3 +58,156 @@
                 TextColor="White" FontAttributes="Bold" Clicked="OnNuevoTurnoClicked"/>
     </Grid>
 </ContentPage>
+=======
+
+        <VerticalStackLayout
+            Grid.Row="0"
+            Padding="20,24,20,10"
+            Spacing="3">
+
+            <Label
+                Text="Mis turnos"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#101828" />
+
+            <Label
+                Text="Turnos registrados"
+                FontSize="13"
+                TextColor="#667085" />
+
+        </VerticalStackLayout>
+
+        <CollectionView
+            x:Name="TurnosCollection"
+            Grid.Row="1"
+            ItemsSource="{Binding Turnos}"
+            SelectionMode="None"
+            Margin="20,5,20,10">
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout
+                    Padding="30"
+                    Spacing="8"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+
+                    <Label
+                        Text="No hay turnos registrados"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#344054"
+                        HorizontalTextAlignment="Center" />
+
+                    <Label
+                        Text="Presiona Nuevo turno para registrar uno."
+                        FontSize="14"
+                        TextColor="#667085"
+                        HorizontalTextAlignment="Center" />
+
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Turno">
+
+                    <Border
+                        BackgroundColor="White"
+                        Stroke="#E5EAF2"
+                        StrokeThickness="1"
+                        Padding="15"
+                        Margin="0,0,0,12">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="12" />
+                        </Border.StrokeShape>
+
+                        <VerticalStackLayout Spacing="6">
+
+                            <Grid ColumnDefinitions="*,Auto">
+
+                                <Label
+                                    Grid.Column="0"
+                                    Text="{Binding Numero, StringFormat='Turno: {0}'}"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    TextColor="#1E293B" />
+
+                                <Border
+                                    Grid.Column="1"
+                                    BackgroundColor="#E8F2FF"
+                                    StrokeThickness="0"
+                                    Padding="10,5">
+
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="10" />
+                                    </Border.StrokeShape>
+
+                                    <Label
+                                        Text="{Binding Estado}"
+                                        FontSize="12"
+                                        FontAttributes="Bold"
+                                        TextColor="#087BF5" />
+
+                                </Border>
+
+                            </Grid>
+
+                            <Label
+                                Text="{Binding Negocio, StringFormat='Negocio: {0}'}"
+                                FontSize="14"
+                                TextColor="#344054" />
+
+                            <Label
+                                Text="{Binding Servicio, StringFormat='Servicio: {0}'}"
+                                FontSize="14"
+                                TextColor="#344054" />
+
+                            <Label
+                                Text="{Binding Fecha, StringFormat='Fecha: {0:dd/MM/yyyy}'}"
+                                FontSize="13"
+                                TextColor="#667085" />
+
+                            <Label
+                                Text="{Binding PersonasDelante, StringFormat='Personas delante: {0}'}"
+                                FontSize="13"
+                                TextColor="#667085" />
+
+                            <Grid
+                                ColumnDefinitions="*,*"
+                                ColumnSpacing="10"
+                                Margin="0,8,0,0">
+
+                                <Button
+                                    Grid.Column="0"
+                                    Text="Editar"
+                                    HeightRequest="40"
+                                    CornerRadius="10"
+                                    BackgroundColor="#087BF5"
+                                    TextColor="White"
+                                    Clicked="OnEditarTurnoClicked" />
+
+                                <Button
+                                    Grid.Column="1"
+                                    Text="Eliminar"
+                                    HeightRequest="40"
+                                    CornerRadius="10"
+                                    BackgroundColor="#DC3545"
+                                    TextColor="White"
+                                    Clicked="OnEliminarTurnoClicked" />
+
+                            </Grid>
+
+                        </VerticalStackLayout>
+
+                    </Border>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+
+    </Grid>
+</ContentPage>
+>>>>>>> Stashed changes

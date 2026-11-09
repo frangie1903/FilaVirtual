@@ -127,7 +127,7 @@
 
                                 <Label
                                     Grid.Column="0"
-                                    Text="A-025"
+                                    Text="{Binding Numero}"
                                     TextColor="White"
                                     FontSize="29"
                                     FontAttributes="Bold"
@@ -136,7 +136,8 @@
                                 <!-- ESTADO -->
                                 <Border
                                     Grid.Column="1"
-                                    BackgroundColor="#DDFBE5"
+                                    IsVisible="{Binding HayTicket}"
+                                    BackgroundColor="{Binding EstadoFondo}"
                                     StrokeThickness="0"
                                     Padding="11,5"
                                     VerticalOptions="Center">
@@ -146,10 +147,10 @@
                                     </Border.StrokeShape>
 
                                     <Label
-                                        Text="En espera"
+                                        Text="{Binding Estado}"
                                         FontSize="10"
                                         FontAttributes="Bold"
-                                        TextColor="#15803D"/>
+                                        TextColor="{Binding EstadoColor}"/>
                                 </Border>
 
                             </Grid>
@@ -173,7 +174,7 @@
                                     TextColor="White"/>
 
                                 <Label
-                                    Text="3 personas delante"
+                                    Text="{Binding PersonasTexto}"
                                     FontSize="13"
                                     TextColor="White"/>
                             </HorizontalStackLayout>
@@ -187,13 +188,13 @@
                                     TextColor="White"/>
 
                                 <Label
-                                    Text="Clínica Central"
+                                    Text="{Binding NegocioTexto}"
                                     FontSize="13"
                                     TextColor="White"/>
                             </HorizontalStackLayout>
 
 
-                            <HorizontalStackLayout Spacing="9">
+                            <HorizontalStackLayout Spacing="9" IsVisible="{Binding HayTicket}">
 
                                 <Label
                                     Text="◷"
@@ -201,7 +202,7 @@
                                     TextColor="White"/>
 
                                 <Label
-                                    Text="Hora estimada: 10:30 a. m."
+                                    Text="{Binding HoraTexto}"
                                     FontSize="13"
                                     TextColor="White"/>
                             </HorizontalStackLayout>
@@ -410,66 +411,6 @@
             StrokeThickness="1"
             Padding="20,7">
 
-            <Grid ColumnDefinitions="*,*,*">
-
-                <!-- INICIO -->
-                <VerticalStackLayout
-                    Grid.Column="0"
-                    Spacing="2"
-                    HorizontalOptions="Center">
-
-                    <Label
-                        Text="⌂"
-                        FontSize="19"
-                        TextColor="#087BF5"
-                        HorizontalTextAlignment="Center"/>
-
-                    <Label
-                        Text="Inicio"
-                        FontSize="10"
-                        FontAttributes="Bold"
-                        TextColor="#087BF5"/>
-                </VerticalStackLayout>
-
-
-                <!-- TURNOS -->
-                <VerticalStackLayout
-                    Grid.Column="1"
-                    Spacing="2"
-                    HorizontalOptions="Center">
-
-                    <Label
-                        Text="◷"
-                        FontSize="19"
-                        TextColor="#667085"
-                        HorizontalTextAlignment="Center"/>
-
-                    <Label
-                        Text="Turnos"
-                        FontSize="10"
-                        TextColor="#667085"/>
-                </VerticalStackLayout>
-
-
-                <!-- PERFIL -->
-                <VerticalStackLayout
-                    Grid.Column="2"
-                    Spacing="2"
-                    HorizontalOptions="Center">
-
-                    <Label
-                        Text="♙"
-                        FontSize="19"
-                        TextColor="#667085"
-                        HorizontalTextAlignment="Center"/>
-
-                    <Label
-                        Text="Perfil"
-                        FontSize="10"
-                        TextColor="#667085"/>
-                </VerticalStackLayout>
-
-            </Grid>
 
         </Border>
 

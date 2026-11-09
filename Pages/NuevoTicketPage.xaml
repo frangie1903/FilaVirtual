@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FilaVirtual.Pages.NuevoTicketPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Nuevo ticket"
+    BackgroundColor="#F7F9FD">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label" x:Key="Etiqueta">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#1D2939" />
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="#101828" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="22" Spacing="8">
+
+            <Label Text="Nuevo ticket" FontSize="26" FontAttributes="Bold" TextColor="#101828" />
+            <Label Text="Elige dónde y qué diligencia necesitas"
+                   FontSize="13" TextColor="#667085" />
+
+            <Label Text="Negocio" Style="{StaticResource Etiqueta}" Margin="0,12,0,0" />
+            <Picker
+                Title="Selecciona un negocio"
+                ItemsSource="{Binding Negocios}"
+                ItemDisplayBinding="{Binding Nombre}"
+                SelectedItem="{Binding NegocioSeleccionado}" />
+
+            <Label Text="Sucursal" Style="{StaticResource Etiqueta}" />
+            <Picker
+                Title="Selecciona una sucursal"
+                ItemsSource="{Binding Sucursales}"
+                ItemDisplayBinding="{Binding Nombre}"
+                SelectedItem="{Binding SucursalSeleccionada}" />
+            <Label Text="{Binding HorarioSucursal}" FontSize="12" TextColor="#667085" />
+
+            <Label Text="Tipo de diligencia" Style="{StaticResource Etiqueta}" />
+            <Picker
+                Title="Selecciona la diligencia"
+                ItemsSource="{Binding Servicios}"
+                ItemDisplayBinding="{Binding Nombre}"
+                SelectedItem="{Binding ServicioSeleccionado}" />
+
+            <Button
+                Text="Generar ticket"
+                BackgroundColor="#087BF5"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="12"
+                HeightRequest="50"
+                Margin="0,16,0,0"
+                Command="{Binding ConfirmarCommand}" />
+
+            <!-- TICKET GENERADO -->
+            <Border
+                IsVisible="{Binding HayTicket}"
+                Padding="20"
+                Margin="0,16,0,0"
+                BackgroundColor="White"
+                Stroke="#087BF5">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="16" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                    <Label Text="Tu ticket" FontSize="13" TextColor="#667085"
+                           HorizontalOptions="Center" />
+                    <Label Text="{Binding TicketGenerado.Numero}"
+                           FontSize="48" FontAttributes="Bold" TextColor="#087BF5"
+                           HorizontalOptions="Center" />
+                    <Label Text="{Binding TicketGenerado.Negocio}"
+                           FontSize="16" FontAttributes="Bold" TextColor="#101828"
+                           HorizontalOptions="Center" />
+                    <Label Text="{Binding TicketGenerado.Sucursal}"
+                           FontSize="14" TextColor="#475467" HorizontalOptions="Center" />
+                    <Label Text="{Binding TicketGenerado.Servicio}"
+                           FontSize="14" TextColor="#475467" HorizontalOptions="Center" />
+                    <Label Text="{Binding TicketGenerado.PersonasDelante, StringFormat='Personas delante: {0}'}"
+                           FontSize="14" TextColor="#475467" HorizontalOptions="Center" />
+
+                    <Button
+                        Text="Ver mis tickets"
+                        BackgroundColor="#E0EDFF"
+                        TextColor="#087BF5"
+                        CornerRadius="10"
+                        Margin="0,12,0,0"
+                        Command="{Binding VerMisTicketsCommand}" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

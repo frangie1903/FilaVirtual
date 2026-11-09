@@ -18,7 +18,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FilaVirtual")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+5a2fa857771dc7046d3bc668b19987759c15c0e5")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+9e6acd86ec602b0e45231b70a22ef42a8ad6cf07")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("FilaVirtual")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FilaVirtual")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

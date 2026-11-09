@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FilaVirtual.Pages.RegistroNegocioPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:FilaVirtual.ViewModels"
+    Title="{Binding TituloFormulario}"
+    BackgroundColor="#F5F7FC">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label" x:Key="Etiqueta">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#1D2939" />
+        </Style>
+        <Style TargetType="Label" x:Key="Error">
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="#1E293B" />
+            <Setter Property="PlaceholderColor" Value="#98A2B3" />
+            <Setter Property="HeightRequest" Value="48" />
+        </Style>
+        <Style TargetType="Picker">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="#101828" />
+        </Style>
+        <Style TargetType="TimePicker">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="#101828" />
+            <Setter Property="Format" Value="hh:mm tt" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="22" Spacing="8">
+
+            <Label Text="{Binding TituloFormulario}" FontSize="26" FontAttributes="Bold" TextColor="#101828" />
+            <Label Text="Datos, sucursales con horario y servicios que ofrece"
+                   FontSize="13" TextColor="#667085" />
+
+            <!-- DATOS DEL NEGOCIO -->
+            <Label Text="Nombre del negocio" Style="{StaticResource Etiqueta}" Margin="0,12,0,0" />
+            <Entry Text="{Binding Nombre}" Placeholder="Ej. Banco Popular" />
+            <Label Text="{Binding NombreError}" Style="{StaticResource Error}" />
+
+            <Label Text="Dirección principal" Style="{StaticResource Etiqueta}" />
+            <Entry Text="{Binding Direccion}" Placeholder="Dirección del establecimiento" />
+            <Label Text="{Binding DireccionError}" Style="{StaticResource Error}" />
+
+            <Label Text="Teléfono" Style="{StaticResource Etiqueta}" />
+            <Entry Text="{Binding Telefono}" Placeholder="809-555-0100" Keyboard="Telephone" />
+            <Label Text="{Binding TelefonoError}" Style="{StaticResource Error}" />
+
+            <!-- SUCURSALES -->
+            <Label Text="Sucursales y horarios" FontSize="18" FontAttributes="Bold"
+                   TextColor="#101828" Margin="0,16,0,0" />
+
+            <VerticalStackLayout Spacing="12" BindableLayout.ItemsSource="{Binding Sucursales}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="vm:SucursalEditable">
+                        <Border Padding="14" BackgroundColor="White" Stroke="#E5EAF2">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="12" />
+                            </Border.StrokeShape>
+
+                            <VerticalStackLayout Spacing="6">
+                                <Label Text="Nombre de la sucursal" Style="{StaticResource Etiqueta}" />
+                                <Entry Text="{Binding Nombre}" Placeholder="Ej. Sede Piantini" />
+
+                                <Label Text="Localidad / dirección" Style="{StaticResource Etiqueta}" />
+                                <Entry Text="{Binding Localidad}" Placeholder="Ej. Santo Domingo Este" />
+
+                                <Label Text="Prefijo del ticket (1 a 3 letras)" Style="{StaticResource Etiqueta}" />
+                                <Entry Text="{Binding Prefijo}" MaxLength="3" Placeholder="A" />
+
+                                <Label Text="Horario por día (marca los días que abre)" Style="{StaticResource Etiqueta}" />
+
+                                <VerticalStackLayout Spacing="2" BindableLayout.ItemsSource="{Binding Dias}">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate x:DataType="vm:DiaHorarioEditable">
+                                            <Grid ColumnDefinitions="Auto,82,*,*" ColumnSpacing="4">
+                                                <CheckBox IsChecked="{Binding Abierto}" />
+                                                <Label Grid.Column="1" Text="{Binding Nombre}"
+                                                       VerticalOptions="Center" FontSize="13" TextColor="#1E293B" />
+                                                <TimePicker Grid.Column="2" Time="{Binding Apertura}"
+                                                            IsEnabled="{Binding Abierto}" />
+                                                <TimePicker Grid.Column="3" Time="{Binding Cierre}"
+                                                            IsEnabled="{Binding Abierto}" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </VerticalStackLayout>
+
+                                <Button
+                                    Text="Usar las mismas horas en todos los días abiertos"
+                                    BackgroundColor="#E0EDFF"
+                                    TextColor="#087BF5"
+                                    FontSize="12"
+                                    CornerRadius="10"
+                                    Command="{Binding IgualarHorasCommand}" />
+
+                                <Label Text="Acceso de esta sucursal" Style="{StaticResource Etiqueta}"
+                                       Margin="0,8,0,0" />
+                                <Label Text="{Binding OperadorAyuda}" FontSize="11" TextColor="#667085" />
+                                <Entry Text="{Binding OperadorCorreo}" Placeholder="Correo del operador"
+                                       Keyboard="Email" />
+                                <Entry Text="{Binding OperadorContrasena}" IsPassword="True"
+                                       Placeholder="Contraseña (mínimo 6)" />
+
+                                <Button
+                                    Text="Quitar sucursal"
+                                    BackgroundColor="#FEE4E2"
+                                    TextColor="#B42318"
+                                    CornerRadius="10"
+                                    Clicked="OnQuitarSucursalClicked" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+
+            <Button
+                Text="+ Agregar sucursal"
+                BackgroundColor="#E0EDFF"
+                TextColor="#087BF5"
+                CornerRadius="12"
+                HeightRequest="46"
+                Command="{Binding AgregarSucursalCommand}" />
+
+            <!-- SERVICIOS -->
+            <Label Text="Tipos de diligencia que ofrece" FontSize="18" FontAttributes="Bold"
+                   TextColor="#101828" Margin="0,16,0,0" />
+            <Label Text="Si no marcas ninguno, el cliente verá todos los servicios."
+                   FontSize="12" TextColor="#667085" />
+
+            <VerticalStackLayout BindableLayout.ItemsSource="{Binding Servicios}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="vm:ServicioSeleccionable">
+                        <HorizontalStackLayout Spacing="6">
+                            <CheckBox IsChecked="{Binding Seleccionado}" />
+                            <Label Text="{Binding Servicio.Nombre}"
+                                   VerticalOptions="Center" TextColor="#1E293B" />
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+
+            <!-- ACCIONES -->
+            <Button
+                Text="Guardar"
+                BackgroundColor="#087BF5"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="12"
+                HeightRequest="50"
+                Margin="0,16,0,0"
+                Command="{Binding GuardarCommand}" />
+
+            <Button
+                Text="Cancelar"
+                BackgroundColor="#E5E7EB"
+                TextColor="#344054"
+                CornerRadius="12"
+                HeightRequest="48"
+                Clicked="OnCancelarClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
